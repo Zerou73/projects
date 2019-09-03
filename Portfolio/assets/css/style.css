@@ -1,0 +1,157 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: #212121;
+  
+}
+
+#navbar ul{
+  float: right;
+  margin: 1em;
+  }
+
+#navbar li {
+  display: inline;
+  padding: 2em;
+  font-size: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+#navbar a {
+  color: #FAFAFA;
+}
+
+#navbar a:hover {
+  color: orange;
+}
+
+
+
+
+#welcome-section {
+  background-color: #444;
+  background-image: url('https://i.imgur.com/lj4v42K.jpg');
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+#welcome-section h1{
+  border: 6px solid black; 
+  border-radius: 30px;
+  background-color:black;
+  color: #EF6C00;
+  text-align: center;
+  margin-top: 20em;
+  font-size: 24px;
+  font-family: 'Comfortaa', cursive;
+  
+}
+
+
+#projecto {
+  background-color: #546E7A;
+  font-size: 24px;
+}
+
+#projects-h2 {
+  text-align: center;
+  font-size: 34px;
+  font-family: 'Comfortaa', cursive;
+  padding: 5em;
+  background-color: #546E7A;
+}
+
+
+#projects {
+  background-color: #546E7A;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  padding: 2em;
+}
+
+
+
+.project {
+  padding: 4px;
+  margin: 4px  4px;
+  border: 4px solid black;
+  border-radius: 30px;
+  background-color: white;
+  text-decoration: none;
+}
+
+.project-pic {
+  width 100%;
+  height: 180px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.project-title {
+  margin: 2px 2px;
+  font-size: 30px;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  background-color: #37474F;
+  color: #EF6C00;
+}
+
+#contact {
+  
+  background: linear-gradient(#546E7A, #EF6C00); 
+  height: 600px;
+  width: 100%;
+  font-size: 30px;
+  color:black;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#profile-h {
+ 
+  font-family: 'Comfortaa', cursive;
+  
+}
+
+#profile-link{
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 30px;
+  border: 2px solid #90C695;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: #e0ebe8;
+  color: #008080;
+  text-decoration: none;
+}
+
+#profile-link:hover{
+  background: #E4F1FE;
+  color: green;
+}
+
+@media screen(max-width:360px) {
+  main {
+    max-height:360px;
+    max-width:360px;
+  }
+}
