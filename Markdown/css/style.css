@@ -1,0 +1,29 @@
+$margins: 25px ;
+
+h1 {
+  text-align: center;
+}
+
+#maincontent {
+  width: 100%;
+    margin: auto;
+    background-color: gray;
+    
+}
+
+textarea {
+  float: left;
+  margin-left: $margins;
+  margin-right: $margins;
+  margin-bottom: $margins;
+  width: 40%;
+  padding: 15px;
+}
+
+#preview {
+  float: right;
+  width: 40%;
+  padding: 15px;
+  border: 1px;
+  border-radius: 20;
+}
