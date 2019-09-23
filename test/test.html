@@ -1,58 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<head>
-	<meta charset="UTF-8">
-	<title>Survey Form</title>
-</head>
-<body>
-	<div id="main">
-  <h1 id="title">Who are you?</h1>  
-  <p id="description">In this little test we will try to know more about you.</p>
-  <form id="survey-form">
-  <div id="Forms">
-    <label id="name-label" for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    <label id="email-label" for="email" >Email:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    <label id="number-label" for="number" >Number:</label>
-    <input type="number" id="number" name="number" min="1" max="9999999999" placeholder="Enter your number">
-    <label for="dropdown"> Who are you? </label>
-    <select id="dropdown" name="dropdown">
-      <option>None</option>
-      <option>Autist</option>
-      <option>Student</option>
-      <option>Worker</option>
-      <option>Unemployed</option>
-      <option>Special Autist</option>
-    </select>
-    </div>
-    
-    <div id=radio>
-      <p>How is your life?</p>
-      <label for="pretty bad"> Pretty bad</label>
-      <input type="radio" id="pretty bad" name="life" value="pretty bad">
-      <label for="meh"> Okay</label>
-      <input type="radio" id="meh" name="life" value="meh">
-      <label for="very good"> Very good</label>
-      <input type="radio" id="very good" name="life" value="very good">
-      <label for="i-want-to-die"> I want to die</label>
-    <input type="radio" id="i-want-to-die" name="life" value="i want to die">
-    </div>
-    <div id=checkboxes>
-      <p>What do you like to eat?</p>
-      <label for="fastfood"> Fastfood</label>
-      <input type="checkbox" id="fastfood" name="fasfood" value="fasfood">
-        <label for="vegetables"> Vegetables</label>
-      <input type="checkbox" id="vegetables" name="vegetables" value="vegetables">
-        <label for="meat"> Raw meat</label>
-      <input type="checkbox" id="meat" name="meat" value="meat">
-       </div>
-    <label for="comments"> Do you want to tell us something?</label>
-    <textarea id="comments" name="comments" placeholder="Tell me something about you." rows="5" cols="40"></textarea>
-  <button type = "submit" id = "submit" form = "survey-form" value = "Submit">Submit</button>
-  </form>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Who are you?</h1>
+      <p id="description">
+        In this little test we will try to know more about you.
+      </p>
+      <form id="survey-form">
+        <div id="Forms">
+          <label id="name-label" for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+          <label id="email-label" for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <label id="number-label" for="number">Number:</label>
+          <input
+            type="number"
+            id="number"
+            name="number"
+            min="1"
+            max="9999999999"
+            placeholder="Enter your number"
+          />
+          <label for="dropdown"> Who are you? </label>
+          <select id="dropdown" name="dropdown">
+            <option>None</option>
+            <option>Autist</option>
+            <option>Student</option>
+            <option>Worker</option>
+            <option>Unemployed</option>
+          </select>
+        </div>
 
-</div>
-</body>
+        <div id="radio">
+          <p>How is your life?</p>
+          <label for="pretty bad"> Pretty bad</label>
+          <input type="radio" id="pretty bad" name="life" value="pretty bad" />
+          <label for="meh"> Okay</label>
+          <input type="radio" id="meh" name="life" value="meh" />
+          <label for="very good"> Very good</label>
+          <input type="radio" id="very good" name="life" value="very good" />
+          <label for="i-want-to-die"> I want to die</label>
+          <input
+            type="radio"
+            id="i-want-to-die"
+            name="life"
+            value="i want to die"
+          />
+        </div>
+        <div id="checkboxes">
+          <p>What do you like to eat?</p>
+          <label for="fastfood"> Fastfood</label>
+          <input type="checkbox" id="fastfood" name="fasfood" value="fasfood" />
+          <label for="vegetables"> Vegetables</label>
+          <input
+            type="checkbox"
+            id="vegetables"
+            name="vegetables"
+            value="vegetables"
+          />
+          <label for="meat"> Raw meat</label>
+          <input type="checkbox" id="meat" name="meat" value="meat" />
+        </div>
+        <label for="comments"> Do you want to tell us something?</label>
+        <textarea
+          id="comments"
+          name="comments"
+          placeholder="Tell me something about you."
+          rows="5"
+          cols="40"
+        ></textarea>
+        <button type="submit" id="submit" form="survey-form" value="Submit">
+          Submit
+        </button>
+      </form>
+    </div>
+    <script>
+      var array = [1, 4, 3, 5, 6];
+
+      var newArr = array.map(num => num + 1);
+
+      console.log(newArr);
+    </script>
+  </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Crash Course</title>
+	<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+	<style type="text/css">
+		body{
+			font-size: 17px;
+			font-family: arial;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header{
+			background: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px #000 solid;
+			margin-bottom: 10px;
+		}
+
+		#container{
+			width: 90%
+			margin:auto;
+			padding:10px;
+		}
+
+		.myClass {
+			color: blue;
+			background: black;
+		}
+
+		#box{
+			background: #333;
+			color:#fff;
+			width: 500px;
+			height: 90px;
+			padding: 40px;
+			text-align: center;
+		}
+
+		#box2{
+			background: red;
+			width: 100px;
+			height: 100px;
+			position: relative;
+
+
+		}
+	</style>
+</head>
+<body>
+	<header> 
+		<h1>crash course</h1>
+
+
+	</header>
+	<div id='container'>
+	
+		<button id='Fadeout'>Fade out</button>
+		<button id='Fadein'>Fade in</button>
+		<button id='Fadetog'>Fade Toggle</button>
+		
+		<button id='slideUp'>slide up</button>
+		<button id='slideDown'>slide down</button>
+		<button id='slideTog'>toggle</button>
+
+		<button id='stop'>stop</button>
+
+		<hr>
+
+		<div id='box'><h1>hello world</h1></div>
+
+
+		<hr>
+
+		<button id='moveLeft'>moveLeft</button>
+		<button id='moveRight'>moveRight</button>
+		<button id='moveAround'>moveRound</button>
+
+		<div id='box2'></div>
+		<h3>add post</h3>
+		<form id='postForm' action='https://jsonplaceholder.typicode.com/posts'>
+		<input type="text" id='title' placeholder="title">
+		<br>
+		<textarea placeholder='body' id='body'></textarea><br>
+		<input type="submit" value='Submit'>
+
+		</form>
+	</div>
+
+
+	<div id='result'></div>
+</body>
+
+
+
+<script type="text/javascript">
+	
+$(document).ready(function(){
+	$('#Fadeout').click(function(){
+		$('#box').fadeOut('slow', function(){
+			$('#Fadeout').text('Its gone');
+		});
+	});
+
+	$('#Fadein').click(function(){
+		$('#box').fadeIn('slow')
+	});
+
+	$('#Fadetog').click(function(){
+		$('#box').fadeToggle('slow')
+	});
+
+	$('#slideUp').click(function(){
+		$('#box').slideUp('slow')
+	});
+
+	$('#slideDown').click(function(){
+		$('#box').slideDown('slow')
+	});
+
+	$('#slideTog').click(function(){
+		$('#box').slideToggle('slow')
+	});
+
+	$('#stop').click(function(){
+		$('#box').stop();
+	});
+
+	$('#moveRight').click(function(){
+		$('#box2').animate({
+			left: 500,
+			height: '300px',
+			width: '300px',
+			opacity: '0.5'
+		});
+	});
+
+	$('#moveLeft').click(function(){
+		$('#box2').animate({
+			left: 0,
+			height: '100px',
+			width: '100px'
+		});
+	});
+
+	$('#moveAround').click(function() {
+		var box = $('#box2');
+		box.animate({
+			left: 300
+
+		});
+		box.animate({
+			top: 300
+
+		});
+		box.animate({
+			left: 0,
+			top: 300
+
+		});
+		box.animate({
+			left: 0,
+			top: 0 
+		});
+	})
+
+
+	$('#result').load('test.html', function(responseTxt, statusTxt, xhr){
+		if (statusTxt =='succes'){
+			alert('It went fine');
+		} else if (statusTxt == 'error'){
+			alert('error: '+xhr.statusText)
+		}
+	});
+
+
+	$.ajax({
+		method:'GET',
+		url: 'https://jsonplaceholder.typicode.com/posts',
+		dataType: 'json'
+	}).done(function (data) {
+		console.log(data);
+		$.map(data, function (post, i) {
+			$('#result').append('<h3>'+post.title+'</h3><p>'+post.body+'</p>')
+			
+		})
+	})
+
+	$('#postForm').submit(function(e){
+		e.preventDefault();
+
+		var title = $('#title').val();
+		var body = $('#body').val();
+		var url = $(this).attr('action');
+
+		$.post(url, {title:title, body:body}).done(function (data) {
+			console.log('post saved');
+			console.log(data);
+		})
+	})
+
+
+});
+
+
+
+
+</script>
